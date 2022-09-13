@@ -1,1 +1,17 @@
-<p>category works!</p>
+<h4 *ngIf="categories; else: noCategory">{{title}}</h4>
+<div>
+
+  <ng-template #noCategory>
+    <div class="alert alert-success" role="alert">
+      No category found
+    </div>
+  </ng-template>
+
+  <div class="list-group">
+    <a class="list-group-item active" href="">All categories</a>
+  </div>
+  <div class="list-group" *ngFor="let category of categories">
+    <a href="" class="list-group-item">{{category.name}}</a>
+  </div>
+
+</div>
